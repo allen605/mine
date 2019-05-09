@@ -50,13 +50,9 @@ void quickSort(int *arr, int left,int right){
             }
         }
         arr[L]=key;//经过一次快排之后，原来的序列变成以key为中枢，划分为两部分（左边的都小于key，右边的大于key）
-        /*
-        printf("end->key=[%d] ",L);
-        print_arr(arr,left,right);
-        printf("\n");
-        */
-        quickSort(arr, left, L-1);
-        quickSort(arr, L+1, right);
+        
+        quickSort(arr, left, L-1);// 继续对左边部分进行快排
+        quickSort(arr, L+1, right);//对右边部分快排
     }
 }
 
